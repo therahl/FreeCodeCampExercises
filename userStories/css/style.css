@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+  background: #00796b;
+  color: #004d40;
+}
+.title{
+  font-size: 5em;
+  font-family: 'Dancing Script', cursive;
+}
+.subtitle {
+  font-size: 1.7em;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 20px;
+}
+
+#stories {
+  display: inline-block;
+}
+img {
+  max-width:100%;
+  max-height:100%;
+}
+.story {
+  /*height: 300px; remove later*/
+  width: 225px;
+  border: 0px solid #004d40;
+  margin: 10px;
+  padding: 5px;
+  background: #f7f7f7;
+  border-radius: 5px;
+}
+.story:hover {
+  background: #e0f2f1;
+}
+.container {
+  width: 55%;
+  }
+a:hover {
+  text-decoration: none;
+}
