@@ -352,7 +352,10 @@ replace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 //--------------------------------------------------------------------------
 // sum all primes up to and including the number
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function sumPrimes(num) {
 
   var counter = 5;
@@ -380,7 +383,10 @@ sumPrimes(10);
 
 //---------------------------------------------------------------------------
 // DNA Pairing.  match each character with the missing element and return a 2d array of each pair.
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function pair(str) {
  var singles = str.split('');
  var group = [];
@@ -411,7 +417,10 @@ pair("GCG");
 //---------------------------------------------------------------------------
 // Pig Latin. Translate the prvided string to Pig Latin.
 // In strong need of refactoring, but it works.
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function translate(str) {
   var fLetter = str.substr(0,1);
   var sLetter = str.substr(1,1)
@@ -446,7 +455,10 @@ translate("consonant");
 //---------------------------------------------------------------------------
 // Roman Numeral Converter. Convert the given number into a roman numeral.
 // All numbers less than 50.  Could add more cases to filter larger numbers.
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function convert(num) {
   var rn = '';
   while(num > 0) {
@@ -483,7 +495,10 @@ convert(36);
 
 //--------------------------------------------------------------------------
 // sum all odd fibonacci numbers
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function sumFibs(num) {
   var counter = 0;
   var fibs = [0,1];
@@ -504,7 +519,10 @@ sumFibs(4);
 
 //---------------------------------------------------------------------------
 // Everything Be True -- check if the predicate returns truthey for all elements of a collection
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function every(collection, pre) {
   var counter = 0;
   for(i=0;i<collection.length;i++) {
@@ -523,7 +541,10 @@ every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'},
 
 //----------------------------------------------------------------------------
 // Binary Agents -- convert the binary string into text
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function binaryAgent(str) {
   var letters = str.split(' ');
   var sentence = '';
@@ -538,7 +559,10 @@ binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 0110
 
 //---------------------------------------------------------------------------
 // flatten an array, recursive
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
 function steamroller(arr) {
   return arr.reduce(function (flat, toFlatten) {
     return flat.concat(Array.isArray(toFlatten) ? steamroller(toFlatten) : toFlatten);
@@ -718,3 +742,9 @@ function pairwise(arr, arg) {
 }
 
 pairwise([1,4,2,3,0,5], 7);
+<<<<<<< HEAD
+//this is a bad solution.
+
+//TODO^^
+=======
+>>>>>>> 6db1fa381c04af6cc036de465b3a48e41f7fd296
