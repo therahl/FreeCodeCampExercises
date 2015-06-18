@@ -718,3 +718,38 @@ function pairwise(arr, arg) {
 }
 
 pairwise([1,4,2,3,0,5], 7);
+
+
+
+// -------------------------------------------------------------------------
+// Permutations
+// Return the number of total permutations of the provided string that don't have repeated consecutive letters.
+//
+// For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating.
+
+function permAlone(str) {
+  var results = [];
+  str = str.split('');
+
+  function permute(arr, memo) {
+    var cur, memo = memo || [];
+
+    for (var i = 0; i < arr.length; i++) {
+      cur = arr.splice(i, 1);
+      if (arr.length === 0) {
+        results.push(memo.concat(cur));
+      }
+      permute(arr.slice(), memo.concat(cur));
+      arr.splice(i, 0, cur[0]);
+    }
+
+    return results;
+  }
+
+  var perms = permute(str);
+  perms = perms.map(function(x){return x.join('');});
+  return perms.filter(function(x,b,i){if(!x.match(/(.)\1+/g)){return perms.splice(i,1);}}).length;
+
+}
+
+permAlone('aab');
