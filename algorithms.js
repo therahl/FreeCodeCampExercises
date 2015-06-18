@@ -618,10 +618,11 @@ add(2,3);
 // should be displayed. Secondly, if the starting year is the current year,
 // and the ending year can be inferred by the reader, the year should be omitted.
 // Input date is formatted as YYYY-MM-DD
+
 function friendly(str) {
   var startDate = str[0].split('-');
   var endDate = str[1].split('-');
-  var months = ['none','January ','February ','March ','April ','May ','June ','July ','August ','September ','November ','December '];
+  var months = ['none','January ','February ','March ','April ','May ','June ','July ','August ','September ','October','November ','December '];
   var final = [];
 
   //find month and convert to relative month name
@@ -633,8 +634,8 @@ function friendly(str) {
   var dayTwo = dayEnding(parseInt(endDate[2]));
 
   //find year and convert to year
-  var yearOne = startDate[0];
-  var yearTwo = endDate[0];
+  var yearOne = parseInt(startDate[0]);
+  var yearTwo = parseInt(endDate[0]);
 
   var finalOne = monthOne + dayOne + ', ' + yearOne;
   var finalTwo = monthTwo + dayTwo + ', ' + yearTwo;
@@ -642,9 +643,11 @@ function friendly(str) {
   if(finalOne === finalTwo) {
     return [finalOne];
   } else if(yearOne === yearTwo && monthOne === monthTwo) {
-    return [monthOne + dayOne,dayTwo];
-  } else if(yearOne === yearTwo || months[months.indexOf(monthOne)] === months[months.indexOf(monthTwo + 2)]) {
-    return [monthOne + dayOne, monthTwo + dayTwo + ', ' + yearTwo];
+    return [monthOne + dayOne, dayTwo];
+  } else if(yearOne === yearTwo-1 && months[months.indexOf(monthOne)] === months[months.indexOf(monthTwo)+10]) {
+    return [monthOne + dayOne, monthTwo + dayTwo];
+  } else if(yearOne === yearTwo) {
+    return [monthOne + dayOne, monthTwo + dayTwo + ', '+ yearTwo];
   } else {
     return [monthOne + dayOne + ', ' + yearOne, monthTwo + dayTwo + ', ' + yearTwo];
   }
@@ -664,7 +667,7 @@ function dayEnding(day) {
 
 }
 
-friendly(['2015-07-01', '2015-07-04']);
+friendly(['2015-12-01', '2016-02-03']);
 
 //---------------------------------------------------------------------------
 // Map the debris.  Return a new array that transforms the element's
