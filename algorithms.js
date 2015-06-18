@@ -756,3 +756,44 @@ function permAlone(str) {
 }
 
 permAlone('aab');
+
+//  -------------------------------------------------------------------------
+// Compare and update inventory stored in a 2d array against a second 2d array
+// of a fresh delivery. Update current inventory item quantity, and if an item
+// cannot be found, add the new item and quantity into the inventory array in
+// alphabetical order.
+//
+
+function inventory(currentInv, newInv) {
+    // All inventory must be accounted for or you're fired!
+  var temp = [];
+  newInv.forEach(function(n,i){
+    currentInv.forEach(function(x){
+      if(x[1] === n[1]){
+        x[0] += n[0];
+        newInv.splice(i,1);
+      }
+    });
+  });
+
+
+  temp = currentInv.concat(newInv);
+  return temp.sort(function(a,b){return a[1]>b[1];});
+}
+
+// Example inventory lists
+var curInv = [
+    [21, 'Bowling Ball'],
+    [2, 'Dirty Sock'],
+    [1, 'Hair Pin'],
+    [5, 'Microphone']
+];
+
+var newInv = [
+    [2, 'Hair Pin'],
+    [3, 'Half-Eaten Apple'],
+    [67, 'Bowling Ball'],
+    [7, 'Toothpaste']
+];
+
+inventory(curInv, newInv);
