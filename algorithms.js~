@@ -502,27 +502,6 @@ function sumFibs(num) {
 
 sumFibs(4);
 
-// ---------------------------------------------------------------------
-// Diff Two Arrays
-// Compare two arrays and return a new array with any items not found in both
-function diff(arr1, arr2) {
-  if(arr1.length === 0){return arr2;}
-  var newArr = arr1.concat(arr2).sort();
-  for(i=0;i<newArr.length;i++){
-    if(newArr[i] === newArr[i+1]){
-      newArr[i] = 'invalid';
-      newArr[i+1] = 'invalid';
-    }
-  }
-  
-  return newArr.filter(function(x){return x !== 'invalid';});
-  
-}
-diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
-
-
-
-
 //---------------------------------------------------------------------------
 // Everything Be True -- check if the predicate returns truthey for all elements of a collection
 
